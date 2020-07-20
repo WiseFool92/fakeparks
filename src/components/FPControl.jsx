@@ -31,7 +31,7 @@ class FPControl extends React.Component {
     } else {
       return (
         <>
-        <h1 className="org">Parks</h1>
+        {/* <h1 className="org">Parks</h1> */}
         <div className="org">
           <ul>
             {parks.map((park, index) => 

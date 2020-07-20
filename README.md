@@ -86,11 +86,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 |                          Behavior                          | Input  | Output  |
 | :--------------------------------------------------------: | :----: | :-----: |
-| The user can view a list of avalible drinks | 'Home Page' | 'http://localhost:3000/' |
-| The user can add a drink to the list | 'Click add tap & fill our form' | 'Tap is added to the list' |
-| The user can view a taps details | 'Click on a tap' | 'Tap Details Page' |
-| The taps decrement pints when a drink is sold. (can't be reduced below zero) | 'Click Sell Pint' | '1 pint decrements from tap' |
-| The user can edit tap details & refill taps | 'Click on the tap & Edit the tap form' | 'Refreshed Tap' |
+| The user can view a list of all parks | 'Home Page' | 'http://localhost:3000/' |
+| The user can add a park to the API database using a POST method | 'Click add park & fill our form' | 'Park is added to the list' |
+| The user can view a parks details (may populate img) | 'Click on a park' | 'Park Details Page' |
+| The user can edit park details? | 'Click on the park & Edit the park form' | 'Updated Park' |
+| Allows user to search for a park? (by state) | 'Search term : Washington' | 'Lists all parks with Washington in name' |
 
 ---
 
