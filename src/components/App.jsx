@@ -1,12 +1,12 @@
 import React from 'react';
 import '../index.css';
-// import Header from "./Header";
+import Header from "./Header";
 import FPControl from './FPControl';
 
 function App(){
   return ( 
     <React.Fragment>
-      {/* <Header /> */}
+      <Header />
       <FPControl />
     </React.Fragment>
   );
