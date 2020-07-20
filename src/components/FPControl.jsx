@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { makeApiCall } from '../actions';
 
 class FPControl extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   
   componentDidMount() {
     const{dispatch} = this.props;
@@ -32,11 +32,12 @@ class FPControl extends React.Component {
         <h1>Parks</h1>
         <ul>
           {parks.map((park, index) => 
-          <li key = {index}>
-            <h3>{park.name}</h3>
-            <p>{park.address}</p>
-            <p>{park.phone_number}</p>
-          </li>)}
+            <li key = {index}>
+              <h3>{park.name}</h3>
+              <p>{park.address}</p>
+              <p>{park.phone_number}</p>
+            </li>
+          )}
         </ul>
         </>
       ) 
