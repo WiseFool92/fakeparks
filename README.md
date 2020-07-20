@@ -94,6 +94,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ---
 
+Tomorrow's To Do List 7/21/20
+- create different render/views based on formVisibleReducer?
+  1. home page
+  2. view all parks w/ scroll box instead of huge list of 200+ parks?
+  3. paginate through list of parks with a method for the api call in actions based on different end points of API
+  4. Implement Search by State
+  5. View park details on div click
+  6. Make each park a clickable card (if we want to go that styling route)
+
+
 ## Known Bugs
 
 _N/A_ - 7/3/2020
@@ -196,6 +206,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 This project is licensed under the MIT License
 
-Copyright (c) 2020 **_Nathan Watkins-Hoagland_**
+Copyright (c) 2020 **_Nathan Watkins-Hoagland & Allison Mackey_**
 
 ---
