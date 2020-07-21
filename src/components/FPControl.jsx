@@ -1,50 +1,65 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { makeApiCall } from '../actions';
+import * as a from './../actions';
+import LandingPage from './LandingPage';
+import ParkList from './ParksList';
 
 class FPControl extends React.Component {
   // constructor(props) {
   //   super(props);
   // }
   
-  componentDidMount() {
-    const{dispatch} = this.props;
-    dispatch(makeApiCall());
+  landingPageClick = () => {
+    const {dispatch} = this.props;
+    dispatch(a.seeLandingPage());
   }
 
+  seeParksClick = () => {
+    const {dispatch} = this.props;
+    dispatch(a.seeParkList());
+  }
+
+  
+  // Async React Hook
+  componentDidMount(){
+    const{dispatch} = this.props;
+  
+    dispatch(a.makeApiCall());
+    
+  }
+  
+
+  // searchApiCall = () => {
+  //   componentDidMount () {
+  //     const{dispatch} = this.props;
+  //     dispatch(a.makeApiCall());
+  //   }
+  // }
+  
   // makeApiCall takes in a number, create button to increase number on click, local state? 
 
   render() {
-    const { error, isLoading, parks } = this.props;
-    if (error) {
-      return (
-        <>
-          Error: {error.message}
-        </>
-      ) 
-    } else if (isLoading) {
-        return (
-          <>
-            Loading...
-          </>
-        )
-    } else {
-      return (
-        <>
-        <div className="org">
-          <ul>
-            {parks.map((park, index) => 
-              <li key = {index}>
-                <h3>{park.name}</h3>
-                <p>{park.address}</p>
-                <p>{park.phone_number}</p>
-              </li>
-            )}
-          </ul>
-        </div>
-        </>
-      ) 
+    let currentView = null; 
+    let button1 = null;
+    let button2 = null;
+
+    if (this.props.formVisibleOnPage === 'landing-page') {
+      currentView = <LandingPage/>
+      button2 = <button onClick={this.seeParksClick}>See All Parks </button>
+      
+    } else if (this.props.formVisibleOnPage === 'park-list') {
+      button1 = <button onClick={this.landingPageClick}>Home</button>
+      currentView = <ParkList apiCall = {this.componentDidMount} parks = {this.props}/>
     }
+    return (
+      <>
+        {button1}
+        {currentView}
+        {button2}
+       
+      </>
+    )
   }
 }
 
