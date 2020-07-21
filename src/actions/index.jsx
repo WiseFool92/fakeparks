@@ -83,7 +83,7 @@ export const makeApiCall = () => {
 
   // }else if (value === 'something-else') {
   // }
-  
+
   return (dispatch) => {
     dispatch(requestParks);
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
