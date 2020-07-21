@@ -9,7 +9,7 @@ class FPControl extends React.Component {
   
   componentDidMount() {
     const{dispatch} = this.props;
-    dispatch(makeApiCall(5));
+    dispatch(makeApiCall());
   }
 
   // makeApiCall takes in a number, create button to increase number on click, local state? 
@@ -31,7 +31,6 @@ class FPControl extends React.Component {
     } else {
       return (
         <>
-        {/* <h1 className="org">Parks</h1> */}
         <div className="org">
           <ul>
             {parks.map((park, index) => 
@@ -51,9 +50,10 @@ class FPControl extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    parks: state.parks,
-    isLoading: state.isLoading,
-    error: state.error
+    parks: state.parks.parks,
+    isLoading: state.parks.isLoading,
+    error: state.parks.error,
+    formVisibleOnPage: state.formVisibleOnPage
   }
 }
 
