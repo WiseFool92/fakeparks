@@ -7,7 +7,9 @@ function App(){
   return ( 
     <React.Fragment>
       <Header />
-      <FPControl />
+      <div className = "box">
+        <FPControl />
+      </div>
     </React.Fragment>
   );
 }

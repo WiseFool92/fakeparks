@@ -54,9 +54,11 @@ class FPControl extends React.Component {
     }
     return (
       <>
-        {button1}
-        {currentView}
-        {button2}
+        <div className = 'button-wrapper'>
+          {button1}
+          {currentView}
+          {button2}
+        </div>
       </>
     );
   }

@@ -8,29 +8,86 @@ code {
   /* color: whitesmoke; */
 }
 
+.homeDrop {
+  /* background-image: url("https://images.unsplash.com/photo-1579085662147-0d04cc9ea467?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"); */
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  color: whitesmoke;
+  border-radius: 8px;
+  opacity: 90%;
+}
+
 .backdrop {
   background-image: url("https://images.unsplash.com/photo-1594121816049-9b5713c9c1df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  /* width: 100vw;
-  height: 5vh; */
+  /* border-radius: 8px;
+  opacity: 90%; */
 }
 
 body {
-  /* background-image: url("https://images.unsplash.com/photo-1594308063939-bfd5756a1da5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"); */
+  /* background-image: url("https://images.unsplash.com/photo-1594308063939-bfd5756a1da5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80");
   background-repeat: no-repeat;
-  background-position: center;
-  /* background-color: black; */
+  background-attachment: fixed;
+  background-position: center; */
+  padding: 30px;
+  background-color: black;
 }
+
+img {
+  border-radius: 8px;
+}
+
+.box {
+  padding: 25px;
+  background-color: lightyellow;
+  opacity: 90%;
+  border-radius: 8px;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 5px;
+}
+
+button {
+  background-color: black;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  margin:0 0.1em 0.1em 0;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:700;
+  color: rgb(129, 11, 11);
+  text-align:center;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+  border-color: rgba(255,255,255,1);
+  transform: scale(1.1);
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+
+button:focus {outline: 0}
 
 ul {
   list-style-position: inside;
+  list-style-type: none;
 }
-
-.homeDrop {
-  background-image: url("https://images.unsplash.com/photo-1579085662147-0d04cc9ea467?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80");
-  background-repeat: no-repeat;
-  background-position: center;
+.rules {
   text-align: center;
 }
