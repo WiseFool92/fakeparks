@@ -24,15 +24,9 @@ code {
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  /* border-radius: 8px;
-  opacity: 90%; */
 }
 
 body {
-  /* background-image: url("https://images.unsplash.com/photo-1594308063939-bfd5756a1da5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; */
   padding: 30px;
   background-color: black;
 }
@@ -85,6 +79,7 @@ button:active {
 button:focus {outline: 0}
 
 ul {
+  padding: 0;
   list-style-position: inside;
   list-style-type: none;
 }
