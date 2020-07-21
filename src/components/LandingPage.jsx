@@ -13,8 +13,8 @@ function LandingPage(){
       <h4>Acceptable</h4>
         <ul className="rules">
           <li>Rollerblades</li>
-          <li>Skating</li>
-          <li>Biking</li>
+          <li>Skateboards</li>
+          <li>Bikes</li>
         </ul>
       <h4>Unacceptable</h4>
         <ul className="rules">
