@@ -16,7 +16,8 @@ code {
   text-align: center;
   color: whitesmoke;
   border-radius: 8px;
-  opacity: 90%;
+  opacity: .9;
+  z-index: -1;
 }
 
 .backdrop {
@@ -38,7 +39,7 @@ img {
 .box {
   padding: 25px;
   background-color: lightyellow;
-  opacity: 90%;
+  opacity: .9;
   border-radius: 8px;
 }
 
