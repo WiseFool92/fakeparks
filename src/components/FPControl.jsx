@@ -1,15 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { makeApiCall } from '../actions';
 import * as a from "./../actions";
 import LandingPage from "./LandingPage";
 import ParkList from "./ParksList";
 import {useState, useEffect} from 'react'
+import ParkDetail from './ParkDetail'
 
 class FPControl extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   landingPageClick = () => {
     const { dispatch } = this.props;
@@ -21,22 +18,20 @@ class FPControl extends React.Component {
     dispatch(a.seeParkList());
   };
 
+  handleChangingPark = (park) => {
+    const {dispatch} = this.props;
+    const action = a.selectPark(park)
+    dispatch(action)
+    // const selectedPark = this.props.parks[id];
+    // this.setState({selectedPark: selectedPark})
+  }
+
   // Async React Hook
   componentDidMount() {
     const { dispatch } = this.props;
-    if (this.props.formVisibleOnPage === "landing-page") {
-      dispatch(a.makeApiCall());
-    } else if (this.props.formVisibleOnPage === "park-list") {
-      dispatch(a.paginateApi(3));
-    }
+    dispatch(a.makeApiCall());
   }
 
-  // searchApiCall = () => {
-  //   componentDidMount () {
-  //     const{dispatch} = this.props;
-  //     dispatch(a.makeApiCall());
-  //   }
-  // }
 
   // makeApiCall takes in a number, create button to increase number on click, local state?
 
@@ -45,13 +40,17 @@ class FPControl extends React.Component {
     let button1 = null;
     let button2 = null;
 
-    if (this.props.formVisibleOnPage === "landing-page") {
+    if (this.props.selectedPark !=null) {
+      currentView = <ParkDetail
+      park = {this.props.selectedPark}/>
+    } 
+    else if (this.props.formVisibleOnPage === "landing-page") {
       currentView = <LandingPage />;
       button2 = <button onClick={this.seeParksClick}>See All Parks </button>;
     } else if (this.props.formVisibleOnPage === "park-list") {
       button1 = <button onClick={this.landingPageClick}>Home</button>;
-      currentView = <ParkList parks={this.props} />;
-    }
+      currentView = <ParkList parks={this.props} onParkSelection={this.handleChangingPark}/>;
+    } 
     return (
       <>
         <div className = 'button-wrapper'>
@@ -70,6 +69,7 @@ const mapStateToProps = (state) => {
     isLoading: state.parks.isLoading,
     error: state.parks.error,
     formVisibleOnPage: state.formVisibleOnPage,
+    selectedPark : state.selectedPark
   };
 };
 

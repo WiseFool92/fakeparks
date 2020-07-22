@@ -7,3 +7,6 @@ export const PARK_LIST = 'PARK_LIST';
 export const SEE_FORM = 'SEE_FORM';
 export const SELECTED_PARK = 'SELECTED_PARK';
 export const LANDING_PAGE = 'LANDING_PAGE';
+
+// Might not be needed
+export const SEE_PARK = 'SEE_PARK';

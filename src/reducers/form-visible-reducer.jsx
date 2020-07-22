@@ -5,6 +5,9 @@ export default (state = 'landing-page', action) => {
   case c.LANDING_PAGE:
     state = 'landing-page';
     return state;
+  case c.SEE_PARK: 
+    state = 'see-park';
+    return state;
   case c.SEE_FORM: 
     state = 'see-form';
     return state; 

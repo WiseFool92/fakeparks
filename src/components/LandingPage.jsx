@@ -3,7 +3,6 @@ import React from "react";
 function LandingPage(){
   return (
     <>
-  
       <h1 className="homeDrop">Welcome To Le Parks</h1>
       
       <h2>About Our Parks</h2>

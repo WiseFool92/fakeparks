@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as a from './../actions';
-import { makeApiCall } from '../actions';
+import Park from './Park';
+
+
+// placed on line 15 -> made infinate calls to API
+// function componentDidMount() {
+//   const{dispatch} = props.parks;
+//   dispatch(a.makeApiCall());
+// }
+// componentDidMount()
 
 function ParkList(props) {
-  // function componentDidMount() {
-  //   const{dispatch} = props;
-  //   dispatch(a.makeApiCall());
-  // }
   const {error, isLoading, parks } = props.parks
     if (error) {
+  
       return (
         <>
           Error: {error.message}
@@ -22,16 +26,20 @@ function ParkList(props) {
           </>
         )
     } else {
+      // componentDidMount()
       return (
         <>
         <div className="org">
           <ul>
-            {parks.map((park, index) => 
-              <li key = {index}>
-                <h3>{park.name}</h3>
-                <p>{park.address}</p>
-                <p>{park.phone_number}</p>
-              </li>
+            {parks.map((park) => {
+              return <Park
+              name = {park.name}
+              address = {park.address}
+              website = {park.website}
+              key = {park.id}
+              id = {park.id}
+              />
+            }
             )}
           </ul>
         </div>
@@ -40,4 +48,9 @@ function ParkList(props) {
     }
 }
 
+ParkList.propTypes = {
+  onParkSelection: PropTypes.func
+}
+
 export default ParkList;
+

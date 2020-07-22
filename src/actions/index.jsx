@@ -1,9 +1,27 @@
 import * as c from "./ActionTypes";
 
+
+export const selectPark = (park) => {
+  const {id, name, address, phone_number, website} = park;
+  return { 
+    type: c.SELECTED_PARK,
+    id: id,
+    name: name, 
+    address: address, 
+    phone_number: phone_number, 
+    website: website
+  }
+}
+
 // for navigating between page views
 export const seeForm = () => ({
   type: c.SEE_FORM,
 });
+
+export const seePark = () => ({
+  type: c.SEE_PARK,
+});
+
 
 // Home Page
 export const seeLandingPage = () => ({
@@ -30,60 +48,8 @@ export const getParksFailure = (error) => ({
   error,
 });
 
-// ALL API CALLS:
-// for searching for a park
-export const searchApi = (searchTerm) => {
-  return (dispatch) => {
-    dispatch(requestParks);
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = `https://frozen-sea-48679.herokuapp.com/search?query=${searchTerm}`;
-    return fetch(proxyurl + url)
-      .then((response) => response.json())
-      .then((jsonifiedResponse) => {
-        dispatch(getParksSuccess(jsonifiedResponse));
-      })
-      .catch((error) => {
-        dispatch(getParksFailure(error));
-      });
-  };
-};
-
-// for adding a park
-export const addParkToApi = (parkData) => {
-  let { name, address, phone_number, open, website } = parkData;
-  return (dispatch) => {
-    dispatch(requestParks);
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = `https://frozen-sea-48679.herokuapp.com/parks`;
-    return fetch(proxyurl + url, {
-      method: "POST",
-      body: JSON.stringify({
-        name: name,
-        address: address,
-        phone_number: phone_number,
-        open: open,
-        website: website,
-      }),
-    })
-      .then((response) => response.json())
-      .then((jsonifiedResponse) => {
-        dispatch(getParksSuccess(jsonifiedResponse));
-      })
-      .catch((error) => {
-        dispatch(getParksFailure(error));
-      });
-  };
-};
-
-// https://frozen-sea-48679.herokuapp.com/parks/?name=Fake Park&address=123 4th St Portland, OR 97217&website=somewebsite.com&phone_number=(503)111-2222&open=true
-
 // for all parks!
 export const makeApiCall = () => {
-  // if (value === "something") {
-
-  // }else if (value === 'something-else') {
-  // }
-
   return (dispatch) => {
     dispatch(requestParks);
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -100,19 +66,19 @@ export const makeApiCall = () => {
   };
 };
 
-export const paginateApi = (page) => {
-  return (dispatch) => {
-    dispatch(requestParks);
-    console.log(page);
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = `https://frozen-sea-48679.herokuapp.com/page?number=${page}`;
-    return fetch(proxyurl + url)
-      .then((response) => response.json())
-      .then((jsonifiedResponse) => {
-        dispatch(getParksSuccess(jsonifiedResponse));
-      })
-      .catch((error) => {
-        dispatch(getParksFailure(error));
-      });
-  };
-};
+// export const paginateApi = (page) => {
+//   return (dispatch) => {
+//     dispatch(requestParks);
+//     console.log(page);
+//     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+//     const url = `https://frozen-sea-48679.herokuapp.com/page?number=${page}`;
+//     return fetch(proxyurl + url)
+//       .then((response) => response.json())
+//       .then((jsonifiedResponse) => {
+//         dispatch(getParksSuccess(jsonifiedResponse));
+//       })
+//       .catch((error) => {
+//         dispatch(getParksFailure(error));
+//       });
+//   };
+// };
