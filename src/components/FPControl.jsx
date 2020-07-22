@@ -16,11 +16,14 @@ class FPControl extends React.Component {
   seeParksClick = () => {
     const { dispatch } = this.props;
     dispatch(a.seeParkList());
+    dispatch(a.unselectPark());
   };
 
   handleChangingPark = (park) => {
     const {dispatch} = this.props;
     const action = a.selectPark(park)
+    console.log("park: ", park)
+    console.log("props.park: ", this.props.selectedPark);
     dispatch(action)
     // const selectedPark = this.props.parks[id];
     // this.setState({selectedPark: selectedPark})
@@ -32,7 +35,6 @@ class FPControl extends React.Component {
     dispatch(a.makeApiCall());
   }
 
-
   // makeApiCall takes in a number, create button to increase number on click, local state?
 
   render() {
@@ -43,6 +45,7 @@ class FPControl extends React.Component {
     if (this.props.selectedPark !=null) {
       currentView = <ParkDetail
       park = {this.props.selectedPark}/>
+      button2 = <button onClick={this.seeParksClick}>Back</button>;
     } 
     else if (this.props.formVisibleOnPage === "landing-page") {
       currentView = <LandingPage />;

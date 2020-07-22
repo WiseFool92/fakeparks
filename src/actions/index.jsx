@@ -13,6 +13,10 @@ export const selectPark = (park) => {
   }
 }
 
+export const unselectPark = () => ({
+  type: c.UNSELECT_PARK
+});
+
 // for navigating between page views
 export const seeForm = () => ({
   type: c.SEE_FORM,

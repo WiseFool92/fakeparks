@@ -33,6 +33,7 @@ function ParkList(props) {
           <ul>
             {parks.map((park) => {
               return <Park
+              selectedPark = {props.onParkSelection}
               name = {park.name}
               address = {park.address}
               website = {park.website}
@@ -49,7 +50,7 @@ function ParkList(props) {
 }
 
 ParkList.propTypes = {
-  onParkSelection: PropTypes.func
+  selectedPark: PropTypes.func
 }
 
 export default ParkList;

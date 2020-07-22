@@ -8,6 +8,8 @@ function ParkDetail(props) {
     <h3>{park.name}</h3>
     <p>{park.address}</p>
     <p>{park.phone_number}</p>
+    <p>{park.website}</p>
+
     </>
   )
 }
